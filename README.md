@@ -27,11 +27,14 @@ The MLP outputs a non-negative penalty. Pairs that are less useful for a safe ma
 
 <p>
   <img src="assets/DP_arch.png"  align="left" width="400">
-The model uses an encoder-only Transformer with:
-- ego token
-- neighbour tokens
-- map/context tokens
-- a CLS token for scene-level prediction
+The model uses an encoder-only Transformer to processes all tokens at once with:
+<ul>
+  <li> ego token </li>
+  <li> neighbour tokens </li>
+  <li> map/context tokens </li>
+  <li> CLS token for scene-level prediction </li>
+</ul>
+</p>
 
 The standard attention score is $S_{ij} = \frac{Q_i K_j^T}{\sqrt{d}}$
 
@@ -43,7 +46,7 @@ where:
 
 A small penalty keeps the original attention almost unchanged.
 A large penalty suppresses that interaction before softmax.
-</p>
+
 
 ## Outputs
 
