@@ -27,6 +27,7 @@ The MLP outputs a non-negative penalty. Pairs that are less useful for a safe ma
 
 <p>
 <img src="assets/DP_arch.png"  align="left" width="430">
+
 The model uses an encoder-only Transformer to processes all tokens at once with:
   <ul>
     <li> ego token </li>
