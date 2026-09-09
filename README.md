@@ -26,7 +26,7 @@ The MLP outputs a non-negative penalty. Pairs that are less useful for a safe ma
 ## How it works
 
 <p>
-  <img src="assets/DP_arch.png"  align="left" width="400">
+  <img src="assets/DP_arch.png"  align="left" width="430">
   The model uses an encoder-only Transformer to processes all tokens at once with:
   <ul>
     <li> ego token </li>
@@ -41,7 +41,8 @@ The MLP outputs a non-negative penalty. Pairs that are less useful for a safe ma
     <li> $C_{ij}$ is the learned penalty for token pair $(i,j)$ </li>
     <li> $\lambda$ controls how strongly the penalty affects attention </li>
 </p>
-A small penalty keeps the original attention almost unchanged.
+    
+A small penalty keeps the original attention almost unchanged. <br>
 A large penalty suppresses that interaction before softmax.
 
 
