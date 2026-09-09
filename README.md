@@ -33,8 +33,7 @@ The model uses an encoder-only Transformer to processes all tokens at once with:
   <li> neighbour tokens </li>
   <li> map/context tokens </li>
   <li> CLS token for scene-level prediction </li>
-</ul>
-</p>
+</ul> <dr>
 
 The standard attention score is $S_{ij} = \frac{Q_i K_j^T}{\sqrt{d}}$
 
@@ -43,7 +42,7 @@ We modify it as **S'<sub>ij</sub> = S<sub>ij</sub> - $\lambda$ C<sub>ij</sub>**
 where:
 - $C_{ij}$ is the learned penalty for token pair $(i,j)$
 - $\lambda$ controls how strongly the penalty affects attention
-
+</p>
 A small penalty keeps the original attention almost unchanged.
 A large penalty suppresses that interaction before softmax.
 
