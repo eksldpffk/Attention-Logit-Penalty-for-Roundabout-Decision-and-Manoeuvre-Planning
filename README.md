@@ -31,7 +31,7 @@ The model uses an encoder-only Transformer with:
 - map/context tokens
 - a CLS token for scene-level prediction
 
-The standard attention score is $$ S_{ij} = \frac{Q_i K_j^T}{\sqrt{d}} $$
+The standard attention score is S<sub>ij</sub> = $\frac{Q<sub>i</sub> K<sub>j</sub><sup>T</sup>}{$\sqrt{d}$}$
 
 We modify it as $$ S'_{ij} = S_{ij} - \lambda C_{ij}$$
 
