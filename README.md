@@ -33,7 +33,7 @@ The MLP outputs a non-negative penalty. Pairs that are less useful for a safe ma
     <li> neighbour tokens </li>
     <li> map/context tokens </li>
     <li> CLS token for scene-level prediction </li>
-  </ul> <br>
+  </ul>
   The standard attention score is $S_{ij} = \frac{Q_i K_j^T}{\sqrt{d}}$ <br>
   We modify it as **S'<sub>ij</sub> = S<sub>ij</sub> - $\lambda$ C<sub>ij</sub>** <br>
   where:
