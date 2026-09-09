@@ -26,20 +26,21 @@ The MLP outputs a non-negative penalty. Pairs that are less useful for a safe ma
 ## How it works
 
 <p>
-  <img src="assets/DP_arch.png"  align="left" width="430">
-  The model uses an encoder-only Transformer to processes all tokens at once with:
+<img src="assets/DP_arch.png"  align="left" width="430">
+The model uses an encoder-only Transformer to processes all tokens at once with:
   <ul>
     <li> ego token </li>
     <li> neighbour tokens </li>
     <li> map/context tokens </li>
     <li> CLS token for scene-level prediction </li>
   </ul>
-  The standard attention score is $S_{ij} = \frac{Q_i K_j^T}{\sqrt{d}}$ <br>
-  We modify it as **S'<sub>ij</sub> = S<sub>ij</sub> - $\lambda$ C<sub>ij</sub>** <br>
-  where:
+The standard attention score is $S_{ij} = \frac{Q_i K_j^T}{\sqrt{d}}$ <br>
+We modify it as **S'<sub>ij</sub> = S<sub>ij</sub> - $\lambda$ C<sub>ij</sub>**
+where:
   <ul>
     <li> $C_{ij}$ is the learned penalty for token pair $(i,j)$ </li>
     <li> $\lambda$ controls how strongly the penalty affects attention </li>
+  </ul>
 </p>
     
 A small penalty keeps the original attention almost unchanged. <br>
