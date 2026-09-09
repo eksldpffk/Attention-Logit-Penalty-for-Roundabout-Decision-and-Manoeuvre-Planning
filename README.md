@@ -25,6 +25,8 @@ The MLP outputs a non-negative penalty. Pairs that are less useful for a safe ma
 
 ## How it works
 
+<p>
+  <img src="assets/DP_arch.png"  align="left" width="400">
 The model uses an encoder-only Transformer with:
 - ego token
 - neighbour tokens
@@ -41,9 +43,6 @@ where:
 
 A small penalty keeps the original attention almost unchanged.
 A large penalty suppresses that interaction before softmax.
-
-<p align="center">
-  <img src="assets/architecture.png" width="780">
 </p>
 
 ## Outputs
