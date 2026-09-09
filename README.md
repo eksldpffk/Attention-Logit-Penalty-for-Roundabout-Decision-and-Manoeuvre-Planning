@@ -33,7 +33,7 @@ The model uses an encoder-only Transformer with:
 
 The standard attention score is S<sub>ij</sub> = $\frac{Q<sub>i</sub> K<sub>j</sub><sup>T</sup>}{$\sqrt{d}$}$
 
-We modify it as $$ S'_{ij} = S_{ij} - \lambda C_{ij}$$
+We modify it as S'<sub>ij</sub> = S<sub>ij</sub> - $\lambda$ C<sub>ij</sub>
 
 where:
 - $C_{ij}$ is the learned penalty for token pair $(i,j)$
