@@ -59,3 +59,15 @@ The goal is not to force the model to follow hand-written rules. The penalty net
 We only give the attention mechanism extra information about the **relationship between two agents and the current scene**, so it can reduce attention to interactions that are less relevant for the manoeuvre.
 
 _This keeps the main Transformer architecture unchanged and adds only a small interaction-aware module._
+
+
+## Results
+
+Evaluated on 10 RounD recordings with a recording-level split.
+
+| Model | Position Error @1s ↓ | Speed MAE ↓ | Heading MAE ↓ |
+|---|---:|---:|---:|
+| Vanilla Attention | 0.296 m | 0.300 m/s | **1.620°** |
+| Interaction-Aware Attention | **0.267 m** | **0.223 m/s** | 1.839° |
+
+On the TTC-defined high-interaction subset (37.7% of test scenes), the interaction-aware model also improved position error (0.318 → 0.291 m) and speed MAE (0.345 → 0.278 m/s), while heading accuracy showed a trade-off.
