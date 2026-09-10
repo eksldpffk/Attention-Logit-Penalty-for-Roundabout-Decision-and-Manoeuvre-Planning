@@ -63,11 +63,22 @@ _This keeps the main Transformer architecture unchanged and adds only a small in
 
 ## Results
 
-Evaluated on 10 RounD recordings with a recording-level split.
+The models were evaluated on the same recording-level test split using 10 RounD recordings.  
+The high-interaction subset contains scenes with TTC < 3 s and at least 3 agents.
 
-| Model | Position Error @1s ↓ | Speed MAE ↓ | Heading MAE ↓ |
-|---|---:|---:|---:|
-| Vanilla Attention | 0.296 m | 0.300 m/s | **1.620°** |
-| Interaction-Aware Attention | **0.267 m** | **0.223 m/s** | 1.839° |
+| Test set | Model | Position Error @1s ↓ | Speed MAE ↓ | Heading MAE ↓ |
+|---|---|---:|---:|---:|
+| Full test set | Vanilla Attention | 0.296 m | 0.300 m/s | **1.620°** |
+| Full test set | Interaction-Aware Attention | **0.267 m** | **0.223 m/s** | 1.839° |
+| High-interaction subset | Vanilla Attention | 0.318 m | 0.345 m/s | **1.855°** |
+| High-interaction subset | Interaction-Aware Attention | **0.291 m** | **0.278 m/s** | 2.114° |
 
-On the TTC-defined high-interaction subset (37.7% of test scenes), the interaction-aware model also improved position error (0.318 → 0.291 m) and speed MAE (0.345 → 0.278 m/s), while heading accuracy showed a trade-off.
+### Analysis
+
+The interaction-aware model improves position and speed prediction on both the full test set and the high-interaction subset. This suggests that the learned attention bias helps the model use surrounding vehicles that are relevant to the ego vehicle's motion.
+
+Heading accuracy becomes slightly worse. A likely reason is that heading depends more on the ego vehicle's own motion and local trajectory, while the interaction bias gives more weight to information from surrounding agents. Since position, speed, and heading are predicted from the same shared representation, improving one type of motion information can slightly hurt another.
+
+### Conclusion
+
+Interaction-aware attention improves translational motion prediction, especially speed, while introducing a small trade-off in heading accuracy. The results support the usefulness of interaction-based attention, but also show that heading prediction may need separate treatment in future work.
