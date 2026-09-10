@@ -73,7 +73,3 @@ The high-interaction subset contains scenes with TTC < 3 s and at least 3 agents
 The interaction-aware model improves position and speed prediction on both the full test set and the high-interaction subset. This suggests that the learned attention bias helps the model use surrounding vehicles that are relevant to the ego vehicle's motion.
 
 Heading accuracy becomes slightly worse. A likely reason is that heading depends more on the ego vehicle's own motion and local trajectory, while the interaction bias gives more weight to information from surrounding agents. Since position, speed, and heading are predicted from the same shared representation, improving one type of motion information can slightly hurt another.
-
-### Conclusion
-
-Interaction-aware attention improves translational motion prediction, especially speed, while introducing a small trade-off in heading accuracy. The results support the usefulness of interaction-based attention, but also show that heading prediction may need separate treatment in future work.
