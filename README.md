@@ -41,8 +41,8 @@ We modify it as $S'_{ij} = S_{ij} - \lambda C_{ij}$ where:
 
 <br clear="left"/>
     
-A small penalty keeps the original attention almost unchanged. <br>
-A large penalty suppresses that interaction before softmax.
+_A small penalty keeps the original attention almost unchanged. <br>
+A large penalty suppresses that interaction before softmax._
 
 
 ## Outputs
