@@ -41,9 +41,10 @@ We modify it as **S'<sub>ij</sub> = S<sub>ij</sub> - λ C<sub>ij</sub>** where:
 
 <br clear="left"/>
     
-_A small penalty keeps the original attention almost unchanged. <br>
-A large penalty suppresses that interaction before softmax._
-
+<p align="center"> 
+    <i>A small penalty keeps the original attention almost unchanged.<br>
+    A large penalty suppresses that interaction before softmax.</i>
+</p>
 
 ## Outputs
 
