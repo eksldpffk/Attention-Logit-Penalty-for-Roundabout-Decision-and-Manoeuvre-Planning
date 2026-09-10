@@ -34,7 +34,7 @@ The model uses an encoder-only Transformer to processes all tokens at once with:
 * CLS token for scene-level prediction
 
 The standard attention score is $S_{ij} = \frac{Q_i K_j^T}{\sqrt{d}}$ <br>
-We modify it as $S'<sub>ij</sub> = S_{ij} - \lambda C_{ij}$ where:
+We modify it as $$S'<sub>ij</sub> = S<sub>ij</sub> - \lambda C<sub>ij</sub>$$ where:
 
 * $C_{ij}$ is the learned penalty for token pair $(i,j)$
 * $\lambda$ controls how strongly the penalty affects attention
