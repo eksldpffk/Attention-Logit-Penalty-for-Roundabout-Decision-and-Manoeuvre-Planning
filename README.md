@@ -23,7 +23,7 @@ The MLP produces a learned signed attention bias. The bias can either increase o
 
 ## How it works
 
-<img src="assets/DP_arch.png" align="left" width="500">
+<img src="assets/DP_arc.png" align="left" width="500">
 
 The model uses an encoder-only Transformer to processes all tokens at once with:
 * one ego vehicle token
